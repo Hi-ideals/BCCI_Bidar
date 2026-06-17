@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Bidar Chamber of Commerce & Industry (BCCI) - Empowering Trade, Building Bidar. Supporting business growth, entrepreneurship, and industrial development since 1996.">
+  <title>BCCI Bidar — Empowering Trade. Building Bidar.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-white">
+
+  <!-- Header -->
+  <div id="site-header"></div>
+
+  <!-- Hero Slider -->
+  <section class="hero-slider" id="heroSlider"></section>
+
+  <!-- Ticker -->
+  <section class="bg-[#0B1F3A] py-3">
+    <div class="max-w-7xl mx-auto px-4 flex items-center gap-4">
+      <span class="flex-shrink-0 text-[#C9A84C] font-bold text-sm tracking-wide flex items-center gap-2">
+        📌 NOTIFICATIONS
+      </span>
+      <div class="ticker-wrap">
+        <div class="ticker-content" id="tickerContent"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="py-20 bg-white" id="aboutSection">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex flex-col lg:flex-row gap-12 items-center fade-in">
+        <!-- Text -->
+        <div class="lg:w-3/5">
+          <span class="text-[#C9A84C] uppercase tracking-[3px] text-sm font-semibold">Who We Are</span>
+          <h2 class="font-['Playfair_Display'] text-3xl md:text-4xl font-bold text-[#0B1F3A] mt-3 mb-6 gold-underline gold-underline-left" id="aboutHeading"></h2>
+          <p class="text-[#6B7280] leading-relaxed text-lg mb-8" id="aboutBody"></p>
+          <a href="about.html" class="btn-outline">View More →</a>
+        </div>
+        <!-- Image -->
+        <div class="lg:w-2/5">
+          <div class="about-image-wrapper">
+            <img id="aboutImage" src="" alt="About BCCI" class="rounded-xl shadow-lg w-full object-cover">
+          </div>
+        </div>
+      </div>
+      <!-- Stats -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 fade-in" id="statsRow"></div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="py-20 bg-[#F5F7FA]">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <span class="text-[#C9A84C] uppercase tracking-[3px] text-sm font-semibold">What We Do</span>
+      <h2 class="font-['Playfair_Display'] text-3xl md:text-4xl font-bold text-[#0B1F3A] mt-3 mb-12 gold-underline">Our Services</h2>
+      <div class="grid md:grid-cols-3 gap-8 fade-in" id="servicesGrid"></div>
+    </div>
+  </section>
+
+  <!-- President's Message -->
+  <section class="py-20 bg-[#0B1F3A]">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex flex-col md:flex-row items-center gap-10 fade-in">
+        <div class="flex-shrink-0">
+          <img id="presidentImg" src="" alt="" class="w-48 h-48 rounded-full president-avatar object-cover">
+        </div>
+        <div class="relative president-quote">
+          <p class="text-white/90 text-lg md:text-xl italic font-['Playfair_Display'] leading-relaxed mb-6" id="presidentMessage"></p>
+          <div>
+            <div class="text-[#C9A84C] font-bold text-lg" id="presidentName"></div>
+            <div class="text-white/60 text-sm" id="presidentTitle"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Office Bearers -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <span class="text-[#C9A84C] uppercase tracking-[3px] text-sm font-semibold">Our Leadership</span>
+      <h2 class="font-['Playfair_Display'] text-3xl md:text-4xl font-bold text-[#0B1F3A] mt-3 mb-12 gold-underline">Office Bearers</h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 fade-in" id="bearersGrid"></div>
+    </div>
+  </section>
+
+  <!-- Events -->
+  <section class="py-20 bg-[#F5F7FA]">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <span class="text-[#C9A84C] uppercase tracking-[3px] text-sm font-semibold">Stay Updated</span>
+      <h2 class="font-['Playfair_Display'] text-3xl md:text-4xl font-bold text-[#0B1F3A] mt-3 mb-12 gold-underline">Upcoming Events</h2>
+      <div class="grid md:grid-cols-3 gap-8 fade-in" id="eventsGrid"></div>
+      <div class="mt-10">
+        <a href="events.html" class="btn-gold">View All Events →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Affiliated Chambers -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <span class="text-[#C9A84C] uppercase tracking-[3px] text-sm font-semibold">Our Network</span>
+      <h2 class="font-['Playfair_Display'] text-3xl md:text-4xl font-bold text-[#0B1F3A] mt-3 mb-12 gold-underline">Affiliated Chambers</h2>
+      <div class="flex flex-wrap justify-center gap-6 fade-in" id="affiliatedGrid"></div>
+    </div>
+  </section>
+
+  <!-- News Grid -->
+  <section class="py-20 bg-[#F5F7FA]">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <span class="text-[#C9A84C] uppercase tracking-[3px] text-sm font-semibold">Latest Updates</span>
+      <h2 class="font-['Playfair_Display'] text-3xl md:text-4xl font-bold text-[#0B1F3A] mt-3 mb-12 gold-underline">News & Updates</h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-6 fade-in" id="newsGrid"></div>
+      <div class="mt-10">
+        <a href="news.html" class="btn-gold">View More →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <span class="text-[#C9A84C] uppercase tracking-[3px] text-sm font-semibold">Member Voices</span>
+      <h2 class="font-['Playfair_Display'] text-3xl md:text-4xl font-bold text-[#0B1F3A] mt-3 mb-4 gold-underline">What Our Members Say</h2>
+      <p class="text-[#6B7280] mb-12 max-w-2xl mx-auto">Hear from the entrepreneurs, industrialists, and professionals who trust BCCI Bidar.</p>
+      <div id="testimonialCarousel" class="overflow-hidden">
+        <div class="testimonial-track"></div>
+        <div class="testimonial-dots flex justify-center gap-2 mt-8"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox"></div>
+
+  <!-- Footer -->
+  <div id="site-footer"></div>
+
+  <script src="content.js"></script>
+  <script src="components.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // About
+      document.getElementById('aboutHeading').textContent = SITE.about.heading;
+      document.getElementById('aboutBody').textContent = SITE.about.body;
+      document.getElementById('aboutImage').src = SITE.about.image;
+
+      // Stats
+      const statsRow = document.getElementById('statsRow');
+      SITE.about.stats.forEach(s => {
+        statsRow.innerHTML += `
+          <div class="stat-item text-center py-6">
+            <div class="text-4xl font-bold text-[#C9A84C] font-['Playfair_Display']">${s.number}</div>
+            <div class="text-[#6B7280] mt-1 text-sm font-medium">${s.label}</div>
+          </div>`;
+      });
+
+      // Services
+      const servGrid = document.getElementById('servicesGrid');
+      SITE.services.forEach(s => {
+        servGrid.innerHTML += `
+          <div class="service-card bg-white rounded-xl p-8 shadow-lg text-center">
+            <div class="w-16 h-16 mx-auto mb-5 rounded-full bg-[#C9A84C]/10 flex items-center justify-center text-3xl">${s.icon}</div>
+            <h3 class="font-['Playfair_Display'] text-xl font-bold text-[#0B1F3A] mb-3">${s.title}</h3>
+            <p class="text-[#6B7280] text-sm leading-relaxed">${s.desc}</p>
+          </div>`;
+      });
+
+      // President
+      document.getElementById('presidentImg').src = SITE.president.image;
+      document.getElementById('presidentMessage').textContent = SITE.president.message;
+      document.getElementById('presidentName').textContent = SITE.president.name;
+      document.getElementById('presidentTitle').textContent = SITE.president.title;
+
+      // Office Bearers
+      const bearers = document.getElementById('bearersGrid');
+      SITE.officeBearers.forEach(b => {
+        bearers.innerHTML += `
+          <div class="bearer-card bg-white rounded-xl p-5 shadow-md text-center">
+            <img src="${b.image}" alt="${b.name}" class="w-20 h-20 rounded-full mx-auto bearer-avatar object-cover mb-3">
+            <div class="font-semibold text-[#0B1F3A] text-sm">${b.name}</div>
+            <div class="text-[#C9A84C] text-xs mt-1">${b.role}</div>
+          </div>`;
+      });
+
+      // Events (first 3)
+      const evGrid = document.getElementById('eventsGrid');
+      SITE.events.slice(0, 3).forEach(e => {
+        evGrid.innerHTML += `
+          <div class="event-card bg-white rounded-xl shadow-lg overflow-hidden text-left">
+            <div class="relative">
+              <img src="${e.image}" alt="${e.title}" class="w-full h-48 object-cover">
+              <div class="event-date-badge">
+                <span class="day">${getDay(e.date)}</span>
+                <span class="month">${getMonth(e.date)}</span>
+              </div>
+            </div>
+            <div class="p-5">
+              <h3 class="font-['Playfair_Display'] font-bold text-[#0B1F3A] text-lg mb-2 line-clamp-2">${e.title}</h3>
+              <p class="text-[#6B7280] text-sm mb-1 flex items-center gap-1">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/></svg>
+                ${e.location}
+              </p>
+              <p class="text-[#6B7280] text-sm mt-2 line-clamp-2">${e.excerpt}</p>
+              <a href="${e.link}" class="text-[#C9A84C] font-semibold text-sm mt-3 inline-block hover:text-[#F0C060]">Read More →</a>
+            </div>
+          </div>`;
+      });
+
+      // Affiliated
+      const affGrid = document.getElementById('affiliatedGrid');
+      SITE.affiliatedChambers.forEach(a => {
+        affGrid.innerHTML += `
+          <a href="${a.link}" class="block bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow w-40">
+            <img src="${a.logo}" alt="${a.name}" class="w-20 h-20 mx-auto object-contain affiliated-logo mb-3">
+            <div class="text-[#6B7280] text-xs text-center leading-snug">${a.name}</div>
+          </a>`;
+      });
+
+      // News (first 6)
+      const newsGrid = document.getElementById('newsGrid');
+      SITE.news.slice(0, 6).forEach((n, i) => {
+        newsGrid.innerHTML += `
+          <div class="news-card rounded-xl shadow-lg overflow-hidden cursor-pointer" onclick="openLightbox(SITE.news.map(x=>({image:x.image,caption:x.title})), ${i})">
+            <img src="${n.image}" alt="${n.title}" class="w-full h-48 object-cover">
+            <div class="p-4 bg-white">
+              <div class="text-xs text-[#C9A84C] font-semibold mb-1">${formatDate(n.date)}</div>
+              <div class="text-[#0B1F3A] font-semibold text-sm line-clamp-2">${n.title}</div>
+            </div>
+          </div>`;
+      });
+    });
+  </script>
+</body>
+</html>

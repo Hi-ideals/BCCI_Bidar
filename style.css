@@ -1,0 +1,408 @@
+/* Core Design Variables */
+:root {
+  --primary-color: #FFB606;
+  --primary-hover: #E2A103;
+  --secondary-color: #0B1F3A;
+  --secondary-dark: #071527;
+  --text-gray: #4B5563;
+  --bg-light: #F5F7FA;
+}
+
+/* Base resets & typography */
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--secondary-color);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+}
+
+/* Premium Underlines */
+.gold-underline {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 15px;
+}
+.gold-underline::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: var(--primary-color);
+  border-radius: 2px;
+}
+
+.gold-underline-left::after {
+  left: 0;
+  transform: none;
+}
+
+/* Buttons */
+.btn-gold {
+  background-color: var(--primary-color);
+  color: #000;
+  font-weight: 600;
+  padding: 0.75rem 1.75rem;
+  border-radius: 9999px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 6px -1px rgba(255, 182, 6, 0.2), 0 2px 4px -1px rgba(255, 182, 6, 0.1);
+  display: inline-block;
+}
+.btn-gold:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(255, 182, 6, 0.3), 0 4px 6px -2px rgba(255, 182, 6, 0.15);
+}
+
+.btn-outline {
+  border: 2px solid var(--primary-color);
+  color: var(--secondary-color);
+  font-weight: 600;
+  padding: 0.65rem 1.65rem;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+.btn-outline:hover {
+  background-color: var(--primary-color);
+  color: #000;
+  transform: translateY(-2px);
+}
+
+/* Page Banner */
+.page-banner {
+  background: linear-gradient(rgba(11, 31, 58, 0.85), rgba(11, 31, 58, 0.92)), url('https://bccibidar.in/wp-content/uploads/2025/08/Slid1.webp');
+  background-size: cover;
+  background-position: center;
+  padding: 6rem 0;
+  text-align: center;
+  position: relative;
+}
+
+/* Navigation Dropdowns */
+.nav-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  min-width: 220px;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 50;
+  border-top: 3px solid var(--primary-color);
+}
+.nav-item-relative:hover .nav-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Mobile Menu Drawer */
+.mobile-drawer {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 320px;
+  height: 100vh;
+  background: white;
+  box-shadow: -10px 0 30px rgba(0,0,0,0.15);
+  z-index: 100;
+  transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+.mobile-drawer.open {
+  right: 0;
+}
+.mobile-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(11, 31, 58, 0.6);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 90;
+  transition: all 0.3s ease;
+}
+.mobile-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Continuous Horizontal Ticker Marquee */
+.ticker-wrap {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.ticker-content {
+  display: inline-block;
+  animation: ticker-animation 35s linear infinite;
+}
+.ticker-wrap:hover .ticker-content {
+  animation-play-state: paused;
+}
+@keyframes ticker-animation {
+  0% { transform: translateX(50%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Hero Slider Fade Styles */
+.hero-slider {
+  position: relative;
+  height: 600px;
+  background: #000;
+  overflow: hidden;
+}
+.hero-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+}
+.hero-slide.active {
+  opacity: 1;
+  z-index: 2;
+}
+.hero-slide img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-cover: cover;
+  transform: scale(1.05);
+  transition: transform 6s ease;
+}
+.hero-slide.active img {
+  transform: scale(1);
+}
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(7, 21, 39, 0.85) 40%, rgba(7, 21, 39, 0.3) 100%);
+  z-index: 2;
+}
+.hero-content-box {
+  position: relative;
+  z-index: 3;
+  color: white;
+  max-width: 800px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease 0.4s;
+}
+.hero-slide.active .hero-content-box {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Custom Hero Controls */
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.slider-arrow:hover {
+  background: var(--primary-color);
+  color: black;
+  border-color: var(--primary-color);
+}
+.slider-arrow-left { left: 20px; }
+.slider-arrow-right { right: 20px; }
+
+.slider-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  gap: 8px;
+}
+.slider-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.4);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.slider-dot.active {
+  background: var(--primary-color);
+  width: 24px;
+  border-radius: 9999px;
+}
+
+/* Lightbox styles */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(7, 21, 39, 0.95);
+  backdrop-filter: blur(8px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.lightbox.open {
+  display: flex;
+  opacity: 1;
+}
+.lightbox-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.lightbox-img {
+  max-width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+  border: 3px solid rgba(255,255,255,0.1);
+}
+.lightbox-caption {
+  color: white;
+  margin-top: 15px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-align: center;
+}
+.lightbox-close {
+  position: absolute;
+  top: -45px;
+  right: 0;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+.lightbox-close:hover {
+  color: var(--primary-color);
+}
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 3rem;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.2s ease;
+}
+.lightbox-nav:hover {
+  color: var(--primary-color);
+}
+.lightbox-prev { left: -60px; }
+.lightbox-next { right: -60px; }
+
+/* Contact inputs focus states */
+.contact-input {
+  width: 100%;
+  border: 1px solid #D1D5DB;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+.contact-input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(255, 182, 6, 0.25);
+}
+
+/* Custom micro-animations */
+.bearer-card, .event-card, .service-card, .news-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.bearer-card:hover, .event-card:hover, .service-card:hover, .news-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.bearer-avatar {
+  border: 3px solid #FFF;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: border-color 0.3s ease;
+}
+.bearer-card:hover .bearer-avatar {
+  border-color: var(--primary-color);
+}
+
+.fade-in {
+  animation: fadeInEffect 0.8s ease-out forwards;
+}
+@keyframes fadeInEffect {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Notification tab transitions */
+.notif-tab {
+  padding: 1.25rem 1.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  color: var(--secondary-color);
+  background: white;
+}
+.notif-tab:hover {
+  background: var(--bg-light);
+}
+.notif-tab.active {
+  background: var(--primary-color);
+  color: black;
+}
+
+/* Testimonials Carousel */
+.testimonial-track {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+.testimonial-dot {
+  transition: all 0.3s ease;
+}
+

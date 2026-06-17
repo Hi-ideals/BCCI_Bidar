@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Government and Chamber Notifications from Bidar Chamber of Commerce & Industry. Stay updated with the latest circulars, reports, and policy notifications.">
+  <title>Notifications — BCCI Bidar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-white">
+  <div id="site-header"></div>
+
+  <!-- Page Banner -->
+  <section class="page-banner">
+    <div class="max-w-7xl mx-auto px-4 relative z-10">
+      <span class="text-[#C9A84C] uppercase tracking-[3px] text-sm font-semibold">Stay Informed</span>
+      <h1 class="font-['Playfair_Display'] text-4xl md:text-5xl font-bold text-white mt-3">Notifications</h1>
+      <div class="flex items-center gap-2 mt-4 text-white/60 text-sm">
+        <a href="index.html" class="hover:text-[#C9A84C]">Home</a>
+        <span>/</span>
+        <span class="text-[#C9A84C]">Notifications</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tabs & Content -->
+  <section class="py-20 bg-[#F5F7FA]">
+    <div class="max-w-4xl mx-auto px-4">
+      <!-- Tabs -->
+      <div class="flex border-b border-gray-200 mb-10 bg-white rounded-t-xl overflow-hidden shadow-sm">
+        <button class="notif-tab active flex-1 text-center" data-tab="govt" id="tabGovt">
+          🏛️ Government Notifications
+        </button>
+        <button class="notif-tab flex-1 text-center" data-tab="chamber" id="tabChamber">
+          📋 Chamber Notifications
+        </button>
+      </div>
+
+      <!-- Govt Notifications -->
+      <div id="panelGovt" class="notif-panel fade-in"></div>
+
+      <!-- Chamber Notifications -->
+      <div id="panelChamber" class="notif-panel hidden fade-in"></div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <script src="content.js"></script>
+  <script src="components.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const tabs = document.querySelectorAll('.notif-tab');
+      const panels = document.querySelectorAll('.notif-panel');
+
+      function renderNotifs(items, container) {
+        container.innerHTML = '';
+        items.forEach((n, i) => {
+          container.innerHTML += `
+            <div class="bg-white rounded-xl p-6 shadow-md mb-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 hover:shadow-lg transition-shadow">
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-full bg-[#C9A84C]/10 flex items-center justify-center text-lg flex-shrink-0">${i + 1}</div>
+                <div>
+                  <h3 class="font-semibold text-[#0B1F3A]">${n.title}</h3>
+                  <p class="text-[#6B7280] text-sm mt-1">${formatDate(n.date)}</p>
+                </div>
+              </div>
+              <a href="${n.file}" class="btn-gold text-sm py-2 px-4 flex-shrink-0">
+                📄 Download
+              </a>
+            </div>`;
+        });
+      }
+
+      renderNotifs(SITE.notifications.govt, document.getElementById('panelGovt'));
+      renderNotifs(SITE.notifications.chamber, document.getElementById('panelChamber'));
+
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          tabs.forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+          const target = tab.dataset.tab;
+          panels.forEach(p => p.classList.add('hidden'));
+          document.getElementById('panel' + target.charAt(0).toUpperCase() + target.slice(1)).classList.remove('hidden');
+        });
+      });
+
+      // Handle hash
+      if (window.location.hash === '#chamber') {
+        document.getElementById('tabChamber').click();
+      }
+    });
+  </script>
+</body>
+</html>

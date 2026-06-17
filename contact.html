@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Bidar Chamber of Commerce & Industry. Reach out for membership inquiries, business support, or general information.">
+  <title>Contact Us — BCCI Bidar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-white">
+  <div id="site-header"></div>
+
+  <!-- Page Banner -->
+  <section class="page-banner">
+    <div class="max-w-7xl mx-auto px-4 relative z-10">
+      <span class="text-[#C9A84C] uppercase tracking-[3px] text-sm font-semibold">Reach Out</span>
+      <h1 class="font-['Playfair_Display'] text-4xl md:text-5xl font-bold text-white mt-3">Contact Us</h1>
+      <div class="flex items-center gap-2 mt-4 text-white/60 text-sm">
+        <a href="index.html" class="hover:text-[#C9A84C]">Home</a>
+        <span>/</span>
+        <span class="text-[#C9A84C]">Contact</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="py-20 bg-[#F5F7FA]">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid lg:grid-cols-2 gap-12">
+        <!-- Contact Form -->
+        <div class="bg-white rounded-xl p-8 shadow-lg fade-in">
+          <h2 class="font-['Playfair_Display'] text-2xl font-bold text-[#0B1F3A] mb-2">Send Us a Message</h2>
+          <p class="text-[#6B7280] text-sm mb-6">Fill out the form below and we'll get back to you as soon as possible.</p>
+          <form action="https://formsubmit.co/bccibdr@yahoo.com" method="POST" id="contactForm">
+            <!-- Formsubmit.co configurations -->
+            <input type="hidden" name="_subject" value="New submission from BCCI Bidar Website!">
+            <input type="hidden" name="_captcha" value="false">
+            <!-- To redirect back to contact page after submission instead of formsubmit default page -->
+            <input type="hidden" name="_next" value="https://bccibdr.com/contact.html">
+            
+            <div class="grid sm:grid-cols-2 gap-4 mb-4">
+              <div>
+                <label class="text-sm font-medium text-[#1A1A2E] mb-1.5 block">Full Name *</label>
+                <input type="text" name="name" required class="contact-input" placeholder="Your full name" id="contactName">
+              </div>
+              <div>
+                <label class="text-sm font-medium text-[#1A1A2E] mb-1.5 block">Email *</label>
+                <input type="email" name="email" required class="contact-input" placeholder="your@email.com" id="contactEmail">
+              </div>
+            </div>
+            <div class="grid sm:grid-cols-2 gap-4 mb-4">
+              <div>
+                <label class="text-sm font-medium text-[#1A1A2E] mb-1.5 block">Phone</label>
+                <input type="tel" name="phone" class="contact-input" placeholder="+91 XXXXX XXXXX" id="contactPhone">
+              </div>
+              <div>
+                <label class="text-sm font-medium text-[#1A1A2E] mb-1.5 block">Subject *</label>
+                <input type="text" name="subject" required class="contact-input" placeholder="How can we help?" id="contactSubject">
+              </div>
+            </div>
+            <div class="mb-6">
+              <label class="text-sm font-medium text-[#1A1A2E] mb-1.5 block">Message *</label>
+              <textarea name="message" required rows="5" class="contact-input resize-none" placeholder="Write your message here..." id="contactMessage"></textarea>
+            </div>
+            <button type="submit" class="btn-gold w-full text-center py-3 text-lg">Send Message →</button>
+          </form>
+        </div>
+
+        <!-- Contact Info & Map -->
+        <div class="space-y-8 fade-in">
+          <!-- Info Cards -->
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div class="bg-white rounded-xl p-6 shadow-md">
+              <div class="w-12 h-12 rounded-full bg-[#C9A84C]/10 flex items-center justify-center text-xl mb-3">📍</div>
+              <h3 class="font-semibold text-[#0B1F3A] mb-1">Visit Us</h3>
+              <p class="text-[#6B7280] text-sm" id="contactAddress"></p>
+            </div>
+            <div class="bg-white rounded-xl p-6 shadow-md">
+              <div class="w-12 h-12 rounded-full bg-[#C9A84C]/10 flex items-center justify-center text-xl mb-3">📞</div>
+              <h3 class="font-semibold text-[#0B1F3A] mb-1">Call Us</h3>
+              <p class="text-[#6B7280] text-sm" id="contactPhones"></p>
+            </div>
+            <div class="bg-white rounded-xl p-6 shadow-md">
+              <div class="w-12 h-12 rounded-full bg-[#C9A84C]/10 flex items-center justify-center text-xl mb-3">✉️</div>
+              <h3 class="font-semibold text-[#0B1F3A] mb-1">Email Us</h3>
+              <p class="text-[#6B7280] text-sm" id="contactEmailInfo"></p>
+            </div>
+            <div class="bg-white rounded-xl p-6 shadow-md">
+              <div class="w-12 h-12 rounded-full bg-[#C9A84C]/10 flex items-center justify-center text-xl mb-3">🕐</div>
+              <h3 class="font-semibold text-[#0B1F3A] mb-1">Office Hours</h3>
+              <p class="text-[#6B7280] text-sm">Mon – Sat: 10 AM – 6 PM<br>Sunday: Closed</p>
+            </div>
+          </div>
+
+          <!-- Map -->
+          <div class="rounded-xl overflow-hidden shadow-lg">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d498.7335387383919!2d77.51491831353232!3d17.914769860059778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcec7466bbfd205%3A0x1ec8feb0945572a5!2sBidar%20Chess%20Association!5e0!3m2!1sen!2sin!4v1781680140186!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+              title="BCCI Bidar Location">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <script src="content.js"></script>
+  <script src="components.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('contactAddress').textContent = SITE.org.address;
+      document.getElementById('contactPhones').innerHTML = `<a href="tel:${SITE.org.phone.replace(/[^0-9+]/g, '')}" class="hover:text-[#C9A84C] transition-colors">${SITE.org.phone}</a><br><a href="tel:${SITE.org.phone2.replace(/[^0-9+]/g, '')}" class="hover:text-[#C9A84C] transition-colors">${SITE.org.phone2}</a>`;
+      document.getElementById('contactEmailInfo').innerHTML = `<a href="mailto:${SITE.org.email}" class="hover:text-[#C9A84C] transition-colors">${SITE.org.email}</a>`;
+    });
+  </script>
+</body>
+</html>
