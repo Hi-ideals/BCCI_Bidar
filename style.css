@@ -1,22 +1,25 @@
 /* Core Design Variables */
 :root {
-  --primary-color: #FFB606;
-  --primary-hover: #E2A103;
-  --secondary-color: #0B1F3A;
-  --secondary-dark: #071527;
-  --text-gray: #4B5563;
-  --bg-light: #F5F7FA;
+  --primary-color: #C9A84C; /* Gold / Goldenrod Accent */
+  --primary-hover: #B5933C;
+  --secondary-color: #7A1C1C; /* Corporate Maroon Brand Color */
+  --secondary-dark: #5F1212; /* Darker Corporate Maroon */
+  --text-gray: #2D3748; /* Deep Charcoal / Grey */
+  --bg-light: #FAF6EE; /* Warm Beige / Cream */
+  --header-bg: #FAF6EE; /* Warm Beige / Cream Header */
 }
 
 /* Base resets & typography */
 body {
   font-family: 'Inter', sans-serif;
-  color: var(--secondary-color);
+  color: var(--text-gray);
   overflow-x: hidden;
+  background-color: #fff;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Playfair Display', serif;
+  color: var(--secondary-color);
 }
 
 /* Premium Underlines */
@@ -44,19 +47,22 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Buttons */
 .btn-gold {
-  background-color: var(--primary-color);
-  color: #000;
+  background-color: var(--secondary-color);
+  color: #fff;
   font-weight: 600;
   padding: 0.75rem 1.75rem;
   border-radius: 9999px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 6px -1px rgba(255, 182, 6, 0.2), 0 2px 4px -1px rgba(255, 182, 6, 0.1);
+  box-shadow: 0 4px 6px -1px rgba(122, 28, 28, 0.2), 0 2px 4px -1px rgba(122, 28, 28, 0.1);
   display: inline-block;
+  border: 1.5px solid transparent;
 }
 .btn-gold:hover {
-  background-color: var(--primary-hover);
+  background-color: var(--secondary-dark);
+  color: #fff;
+  border-color: var(--primary-color);
   transform: translateY(-2px);
-  box-shadow: 0 10px 15px -3px rgba(255, 182, 6, 0.3), 0 4px 6px -2px rgba(255, 182, 6, 0.15);
+  box-shadow: 0 10px 15px -3px rgba(122, 28, 28, 0.35), 0 4px 6px -2px rgba(122, 28, 28, 0.2);
 }
 
 .btn-outline {
@@ -70,13 +76,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 .btn-outline:hover {
   background-color: var(--primary-color);
-  color: #000;
+  color: var(--secondary-dark);
   transform: translateY(-2px);
 }
 
 /* Page Banner */
 .page-banner {
-  background: linear-gradient(rgba(11, 31, 58, 0.85), rgba(11, 31, 58, 0.92)), url('images/Slid1_1.webp');
+  background: linear-gradient(rgba(122, 28, 28, 0.85), rgba(122, 28, 28, 0.92)), url('images/Slid1_1.webp');
   background-size: cover;
   background-position: center;
   padding: 6rem 0;
@@ -113,7 +119,7 @@ h1, h2, h3, h4, h5, h6 {
   right: -100%;
   width: 320px;
   height: 100vh;
-  background: white;
+  background: var(--header-bg);
   box-shadow: -10px 0 30px rgba(0,0,0,0.15);
   z-index: 100;
   transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -130,7 +136,7 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(11, 31, 58, 0.6);
+  background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(4px);
   opacity: 0;
   visibility: hidden;
@@ -160,12 +166,18 @@ h1, h2, h3, h4, h5, h6 {
   100% { transform: translateX(-100%); }
 }
 
-/* Hero Slider Fade Styles */
+/* Hero Slider responsive height to align ticker to bottom of viewport */
 .hero-slider {
   position: relative;
-  height: 600px;
+  height: calc(100vh - 110px);
   background: #000;
   overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .hero-slider {
+    height: calc(100vh - 144px);
+  }
 }
 .hero-slide {
   position: absolute;
@@ -189,7 +201,7 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   width: 100%;
   height: 100%;
-  object-cover: cover;
+  object-fit: cover;
   transform: scale(1.05);
   transition: transform 6s ease;
 }
@@ -202,7 +214,7 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to right, rgba(7, 21, 39, 0.85) 40%, rgba(7, 21, 39, 0.3) 100%);
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.75) 40%, rgba(0, 0, 0, 0.35) 100%);
   z-index: 2;
 }
 .hero-content-box {
@@ -404,5 +416,198 @@ h1, h2, h3, h4, h5, h6 {
 }
 .testimonial-dot {
   transition: all 0.3s ease;
+}
+
+/* Premium Gallery Interactive Hover Effects */
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  background: #fff;
+  border: 2px solid transparent;
+}
+
+.gallery-item img {
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Gradient overlay on hover */
+.gallery-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(122, 28, 28, 0.8) 0%, rgba(122, 28, 28, 0.2) 60%, rgba(122, 28, 28, 0) 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Text / Caption on hover */
+.gallery-item-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.25rem;
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 500;
+  z-index: 2;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  pointer-events: none;
+}
+
+/* Zoom search icon indicator on hover */
+.gallery-item::after {
+  content: '🔍';
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.7);
+  font-size: 1.25rem;
+  color: white;
+  background: var(--primary-color);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  z-index: 3;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  pointer-events: none;
+}
+
+.gallery-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.08);
+  border-color: var(--primary-color);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.08);
+}
+
+.gallery-item:hover::before {
+  opacity: 1;
+}
+
+.gallery-item:hover::after {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.gallery-item:hover .gallery-item-caption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Golden Glassmorphism Stats Cards */
+.stat-card {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(201, 168, 76, 0.25);
+  border-radius: 16px;
+  padding: 2.25rem 1.5rem;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.04);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.stat-card:hover {
+  transform: translateY(-8px);
+  background: rgba(201, 168, 76, 0.08);
+  border-color: var(--primary-color);
+  box-shadow: 0 20px 40px rgba(201, 168, 76, 0.15), 0 10px 10px rgba(0, 0, 0, 0.04);
+}
+
+.stat-card .stat-number {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #C9A84C;
+  font-family: 'Playfair Display', serif;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.stat-card:hover .stat-number {
+  color: #E2A103;
+}
+
+.stat-card .stat-label {
+  color: var(--text-gray);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Smooth Testimonials Marquee & Glassmorphism Card styling */
+.testimonials-marquee-wrap {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 1.5rem 0;
+}
+
+.testimonials-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: testimonials-marquee 45s linear infinite;
+  will-change: transform;
+}
+
+.testimonials-marquee-wrap:hover .testimonials-marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes testimonials-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.testimonial-card-glass {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1.5px solid rgba(255, 255, 255, 0.65);
+  border-radius: 20px;
+  padding: 2.25rem;
+  box-shadow: 0 8px 32px 0 rgba(122, 28, 28, 0.04), inset 0 0 0 1px rgba(255, 255, 255, 0.3);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  width: 420px;
+  max-width: 85vw;
+  margin: 0 16px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.testimonial-card-glass:hover {
+  background: rgba(255, 255, 255, 0.75);
+  border-color: rgba(201, 168, 76, 0.45);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(122, 28, 28, 0.08), inset 0 0 0 1px rgba(255, 255, 255, 0.4);
 }
 

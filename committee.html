@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="Highlights/BCCI%20logo.png" type="image/png">
 </head>
 <body class="bg-white">
   <div id="site-header"></div>
@@ -31,16 +32,16 @@
   <section class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 text-center">
       <span class="text-[#C9A84C] uppercase tracking-[3px] text-sm font-semibold">Leadership</span>
-      <h2 class="font-['Playfair_Display'] text-3xl md:text-4xl font-bold text-[#0B1F3A] mt-3 mb-12 gold-underline">Office Bearers</h2>
+      <h2 class="font-['Playfair_Display'] text-3xl md:text-4xl font-bold text-[var(--secondary-color)] mt-3 mb-12 gold-underline">Office Bearers</h2>
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 fade-in" id="bearersGrid"></div>
     </div>
   </section>
 
   <!-- Full Managing Committee -->
-  <section class="py-20 bg-[#F5F7FA]">
+  <section class="py-20 bg-[var(--bg-light)]">
     <div class="max-w-7xl mx-auto px-4 text-center">
       <span class="text-[#C9A84C] uppercase tracking-[3px] text-sm font-semibold">Complete Team</span>
-      <h2 class="font-['Playfair_Display'] text-3xl md:text-4xl font-bold text-[#0B1F3A] mt-3 mb-12 gold-underline">Managing Committee Members</h2>
+      <h2 class="font-['Playfair_Display'] text-3xl md:text-4xl font-bold text-[var(--secondary-color)] mt-3 mb-12 gold-underline">Managing Committee Members</h2>
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 fade-in" id="committeeGrid"></div>
     </div>
   </section>
@@ -57,7 +58,7 @@
         bearers.innerHTML += `
           <div class="bearer-card bg-white rounded-xl p-5 shadow-md text-center">
             <img src="${b.image}" alt="${b.name}" class="w-24 h-24 rounded-full mx-auto bearer-avatar object-cover mb-3">
-            <div class="font-semibold text-[#0B1F3A] text-sm">${b.name}</div>
+            <div class="font-semibold text-[var(--secondary-color)] text-sm">${b.name}</div>
             <div class="text-[#C9A84C] text-xs mt-1">${b.role}</div>
           </div>`;
       });
@@ -68,7 +69,7 @@
         committee.innerHTML += `
           <div class="bearer-card bg-white rounded-xl p-6 shadow-lg text-center">
             <img src="${m.image}" alt="${m.name}" class="w-28 h-28 rounded-full mx-auto bearer-avatar object-cover mb-4">
-            <div class="font-bold text-[#0B1F3A]">${m.name}</div>
+            <div class="font-bold text-[var(--secondary-color)]">${m.name}</div>
             <div class="text-[#C9A84C] text-sm mt-1">${m.role}</div>
           </div>`;
       });

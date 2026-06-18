@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="Highlights/BCCI%20logo.png" type="image/png">
 </head>
 <body class="bg-white">
   <div id="site-header"></div>
@@ -28,13 +29,24 @@
   </section>
 
   <!-- Gallery Grid -->
-  <section class="py-20 bg-[#F5F7FA]">
+  <section class="py-20 bg-[var(--bg-light)]">
     <div class="max-w-7xl mx-auto px-4">
-      <div class="text-center mb-12">
+      <div class="text-center mb-8">
         <span class="text-[#C9A84C] uppercase tracking-[3px] text-sm font-semibold">Browse</span>
-        <h2 class="font-['Playfair_Display'] text-3xl md:text-4xl font-bold text-[#0B1F3A] mt-3 gold-underline">Event Highlights</h2>
+        <h2 class="font-['Playfair_Display'] text-3xl md:text-4xl font-bold text-[var(--secondary-color)] mt-3 gold-underline">Event Highlights</h2>
       </div>
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 fade-in" id="galleryGrid"></div>
+
+      <!-- Tab Buttons -->
+      <div class="flex justify-center gap-4 mb-12" id="galleryTabs">
+        <button onclick="switchTab('recent')" id="tab-recent" class="px-6 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 shadow-sm border border-gray-200 bg-white hover:bg-gray-50 text-[var(--secondary-color)]">
+          Recent Events
+        </button>
+        <button onclick="switchTab('archives')" id="tab-archives" class="px-6 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 shadow-sm border border-gray-200 bg-white hover:bg-gray-50 text-[var(--secondary-color)]">
+          Archives
+        </button>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 fade-in" id="galleryGrid"></div>
     </div>
   </section>
 
@@ -47,14 +59,57 @@
   <script src="content.js"></script>
   <script src="components.js"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
+    let activeTab = 'recent';
+    let currentPhotos = [];
+
+    function switchTab(tabId) {
+      activeTab = tabId;
+      
+      const btnRecent = document.getElementById('tab-recent');
+      const btnArchives = document.getElementById('tab-archives');
+      
+      if (tabId === 'recent') {
+        btnRecent.className = "px-6 py-2.5 rounded-full font-bold text-sm transition-all duration-300 shadow-md border border-[var(--primary-color)] bg-[var(--primary-color)] text-[var(--secondary-color)]";
+        btnArchives.className = "px-6 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 shadow-sm border border-gray-200 bg-white hover:bg-gray-50 text-[var(--secondary-color)]";
+        currentPhotos = SITE.gallery.recent;
+      } else {
+        btnRecent.className = "px-6 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 shadow-sm border border-gray-200 bg-white hover:bg-gray-50 text-[var(--secondary-color)]";
+        btnArchives.className = "px-6 py-2.5 rounded-full font-bold text-sm transition-all duration-300 shadow-md border border-[var(--primary-color)] bg-[var(--primary-color)] text-[var(--secondary-color)]";
+        currentPhotos = SITE.gallery.archives;
+      }
+
+      // Update URL query parameters
+      const newUrl = window.location.pathname + '?tab=' + tabId;
+      window.history.replaceState({ path: newUrl }, '', newUrl);
+
+      // Render Items
       const grid = document.getElementById('galleryGrid');
-      SITE.gallery.photos.forEach((photo, i) => {
+      grid.innerHTML = '';
+      
+      grid.classList.remove('fade-in');
+      void grid.offsetWidth; // Force reflow
+      grid.classList.add('fade-in');
+
+      currentPhotos.forEach((photo, i) => {
         grid.innerHTML += `
-          <div class="gallery-item aspect-[3/2] rounded-xl shadow-md" onclick="openLightbox(SITE.gallery.photos, ${i})">
+          <div class="gallery-item aspect-[3/2] rounded-xl shadow-md" onclick="openLightbox(currentPhotos, ${i})">
             <img src="${photo.image}" alt="${photo.caption}" class="w-full h-full object-cover rounded-xl">
+            <div class="gallery-item-caption">
+              <p class="font-semibold text-white leading-snug">${photo.caption}</p>
+            </div>
           </div>`;
       });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const tabParam = params.get('tab');
+      
+      if (tabParam === 'archives') {
+        switchTab('archives');
+      } else {
+        switchTab('recent');
+      }
     });
   </script>
 </body>

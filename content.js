@@ -3,7 +3,7 @@ const SITE = {
     name: "Bidar Chamber of Commerce & Industry",
     shortName: "BCCI Bidar",
     tagline: "Empowering Trade. Building Bidar.",
-    logo: "gallery_images/BCCI logo.png",
+    logo: "Highlights/BCCI logo.png",
     phone: "(+91) 9448113579",
     phone2: "08482-225124",
     email: "bccibdr@yahoo.com",
@@ -28,9 +28,14 @@ const SITE = {
         { label: "Chamber Notifications", href: "notifications.html#chamber" }
       ]
     },
-    { label: "Gallery", href: "gallery.html"},
-    { label: "News", href: "news.html" },
-    { label: "Events", href: "events.html" },
+    { label: "Highlights", href: "gallery.html",
+      children: [
+        { label: "News & Articles", href: "news.html" },
+        { label: "Recent Events", href: "gallery.html?tab=recent" },
+        { label: "Archives", href: "gallery.html?tab=archives" }
+      ]
+    },
+    
     { label: "Contact", href: "contact.html" }
   ],
 
@@ -77,10 +82,10 @@ const SITE = {
   about: {
     heading: "Bidar Chamber of Commerce and Industry",
     body: "The Bidar Chamber of Commerce & Industry (BCCI) is committed to fostering a vibrant and progressive business environment in the historic city of Bidar. Our mission is to support and accelerate the growth of trade, industry, and entrepreneurship in the region by working closely with stakeholders through advocacy, policy recommendations, and capacity-building initiatives. Established to serve as a unifying voice for local businesses, the BCCI brings together industrialists, traders, service providers, and entrepreneurs, facilitating dialogue, networking, and collaboration.",
-    image: "gallery_images/BCCI.webp",
+    image: "Highlights/BCCI.png",
     stats: [
       { number: "29+", label: "Years of Service" },
-      { number: "500+", label: "Active Members" },
+      { number: "2000+", label: "Active Members" },
       { number: "100+", label: "Events Conducted" },
       { number: "5", label: "Affiliated Chambers" }
     ]
@@ -88,17 +93,17 @@ const SITE = {
 
   services: [
     {
-      icon: "💼",
+      icon: `<svg class="w-8 h-8 text-[#C9A84C]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>`,
       title: "Business Solutions",
       desc: "Intelligent solutions for business growth through leadership programs, workshops, and seminars."
     },
     {
-      icon: "🤝",
+      icon: `<svg class="w-8 h-8 text-[#C9A84C]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m11 17 2 2a1 1 0 0 0 1.4 0l6.5-6.5a1 1 0 0 0 0-1.4l-2-2a1 1 0 0 0-1.4 0L11 15.5"></path><path d="m13 15-2-2a1 1 0 0 0-1.4 0L3 19.5a1 1 0 0 0 0 1.4l2 2a1 1 0 0 0 1.4 0L13 16"></path><path d="m16 9-4.5 4.5"></path></svg>`,
       title: "Industry Networking",
       desc: "Connecting Bidar's entrepreneurs, traders, and industrialists for collaboration and growth."
     },
     {
-      icon: "📋",
+      icon: `<svg class="w-8 h-8 text-[#C9A84C]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>`,
       title: "Policy Advocacy",
       desc: "Representing business interests with government bodies for favorable policy outcomes."
     }
@@ -172,7 +177,7 @@ const SITE = {
   ],
 
   affiliatedChambers: [
-    { name: "Bidar Chamber of Commerce & Industry", logo: "gallery_images/BCCI logo.png", link: "#" },
+    { name: "Bidar Chamber of Commerce & Industry", logo: "Highlights/BCCI logo.png", link: "#" },
     { name: "Raichur District Chamber of Commerce & Industry", logo: "images/Richure-1.png", link: "#" },
     { name: "Yadgiri District Chamber of Commerce & Industry", logo: "images/Yadagir-1.png", link: "#" },
     { name: "Federation of Karnataka Chambers of Commerce & Industry, Bangalore", logo: "images/fkcci.png", link: "#" },
@@ -180,12 +185,12 @@ const SITE = {
   ],
 
   news: [
-    { image: "gallery_images/BCCI-1.webp", title: "BCCI Meets District Collector on Industrial Development", date: "2025-12-10", link: "#" },
-    { image: "gallery_images/BCCI-33.webp", title: "Chamber Submits Memorandum on GST Relief for SMEs", date: "2025-12-05", link: "#" },
-    { image: "gallery_images/BCCI-2.webp", title: "BCCI Hosts Annual Business Excellence Awards", date: "2025-11-28", link: "#" },
-    { image: "gallery_images/Screenshot 2026-06-17 180041.png", title: "Workshop on Digital Payments for Local Traders", date: "2025-11-15", link: "#" },
-    { image: "gallery_images/BCCI-52.webp", title: "BCCI Delegation Visits Industrial Area in Bidar", date: "2025-11-01", link: "#" },
-    { image: "gallery_images/BCCI-20.webp", title: "Chamber Launches MSME Helpdesk for New Registrations", date: "2025-10-20", link: "#" }
+    { image: "Highlights/Articles/BCCI-1.webp", title: "BCCI Meets District Collector on Industrial Development", date: "2025-12-10", link: "#" },
+    { image: "Highlights/Articles/BCCI-33.webp", title: "Chamber Submits Memorandum on GST Relief for SMEs", date: "2025-12-05", link: "#" },
+    { image: "Highlights/Articles/BCCI-2.webp", title: "BCCI Hosts Annual Business Excellence Awards", date: "2025-11-28", link: "#" },
+    { image: "Highlights/Articles/Screenshot 2026-06-17 180041.png", title: "Workshop on Digital Payments for Local Traders", date: "2025-11-15", link: "#" },
+    { image: "Highlights/Articles/BCCI-52.webp", title: "BCCI Delegation Visits Industrial Area in Bidar", date: "2025-11-01", link: "#" },
+    { image: "Highlights/Articles/BCCI-20.webp", title: "Chamber Launches MSME Helpdesk for New Registrations", date: "2025-10-20", link: "#" }
   ],
 
   testimonials: [
@@ -239,30 +244,32 @@ const SITE = {
   },
 
   gallery: {
-    photos: [
-      { image: "gallery_images/3K9A0453.webp", caption: "Gallery Event" },
-      { image: "gallery_images/3K9A0482.webp", caption: "Gallery Event" },
-      { image: "gallery_images/3K9A0474.webp", caption: "Gallery Event" },
-      { image: "gallery_images/3K9A0462.webp", caption: "Gallery Event" },
-      { image: "gallery_images/3K9A0292.webp", caption: "Gallery Event" },
-      { image: "gallery_images/3K9A0459.webp", caption: "Gallery Event" },
-      { image: "gallery_images/3K9A0445.webp", caption: "Gallery Event" },
-      { image: "gallery_images/3K9A0358.webp", caption: "Gallery Event" },
-      { image: "gallery_images/3K9A0327.webp", caption: "Gallery Event" },
-      { image: "gallery_images/3K9A0317.webp", caption: "Gallery Event" },
-      { image: "gallery_images/Slid5.webp", caption: "Gallery Event" },
-      { image: "gallery_images/Slid1.png", caption: "Gallery Event" },
-      { image: "gallery_images/1.webp", caption: "Recent Event Moment" },
-      { image: "gallery_images/2.webp", caption: "Recent Event Moment" },
-      { image: "gallery_images/3.webp", caption: "Recent Event Moment" },
-      { image: "gallery_images/4.webp", caption: "Recent Event Moment" },
-      { image: "gallery_images/5.webp", caption: "Recent Event Moment" },
-      { image: "gallery_images/6.webp", caption: "Recent Event Moment" },
-      { image: "gallery_images/7.webp", caption: "Recent Event Moment" },
-      { image: "gallery_images/8.webp", caption: "Recent Event Moment" },
-      { image: "gallery_images/9.webp", caption: "Recent Event Moment" },
-      { image: "gallery_images/10.webp", caption: "Recent Event Moment" },
-      { image: "gallery_images/11.webp", caption: "Recent Event Moment" }
+    recent: [
+      { image: "Highlights/Recent Events/Slid1.png", caption: "" },
+      { image: "Highlights/Recent Events/Slid5.webp", caption: "" },
+      { image: "Highlights/Recent Events/1.webp", caption: "" },
+      { image: "Highlights/Recent Events/2.webp", caption: "" },
+      { image: "Highlights/Recent Events/3.webp", caption: "" },
+      { image: "Highlights/Recent Events/4.webp", caption: "" },
+      { image: "Highlights/Recent Events/3K9A0317.webp", caption: "" },
+      { image: "Highlights/Recent Events/3K9A0445.webp", caption: "" },
+      { image: "Highlights/Recent Events/3K9A0453.webp", caption: "" },
+      { image: "Highlights/Recent Events/3K9A0459.webp", caption: "" },
+      { image: "Highlights/Recent Events/3K9A0462.webp", caption: "" },
+      { image: "Highlights/Recent Events/3K9A0482.webp", caption: "" }
+    ],
+    archives: [
+      { image: "Highlights/Archives/1.webp", caption: "Historical Document Archive 1" },
+      { image: "Highlights/Archives/2.webp", caption: "Historical Document Archive 2" },
+      { image: "Highlights/Archives/3.webp", caption: "Historical Document Archive 3" },
+      { image: "Highlights/Archives/4.webp", caption: "Historical Document Archive 4" },
+      { image: "Highlights/Archives/5.webp", caption: "Historical Document Archive 5" },
+      { image: "Highlights/Archives/6.webp", caption: "Historical Document Archive 6" },
+      { image: "Highlights/Archives/7.webp", caption: "Historical Document Archive 7" },
+      { image: "Highlights/Archives/8.webp", caption: "Historical Document Archive 8" },
+      { image: "Highlights/Archives/9.webp", caption: "Historical Document Archive 9" },
+      { image: "Highlights/Archives/10.webp", caption: "Historical Document Archive 10" },
+      { image: "Highlights/Archives/11.webp", caption: "Historical Document Archive 11" }
     ]
   },
 
@@ -289,7 +296,8 @@ const SITE = {
       { label: "Events", href: "events.html" },
       { label: "News", href: "news.html" },
       { label: "Gallery", href: "gallery.html" },
-      { label: "Contact", href: "contact.html" }
+      { label: "Contact", href: "contact.html" },
+      { label: "Privacy Policy", href: "privacy.html" }
     ],
     copyright: "© 2026 BCCI Bidar. All Rights Reserved. Designed by Hi Ideals"
   }

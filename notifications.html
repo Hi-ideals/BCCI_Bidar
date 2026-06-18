@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="Highlights/BCCI%20logo.png" type="image/png">
 </head>
 <body class="bg-white">
   <div id="site-header"></div>
@@ -28,15 +29,17 @@
   </section>
 
   <!-- Tabs & Content -->
-  <section class="py-20 bg-[#F5F7FA]">
+  <section class="py-20 bg-[var(--bg-light)]">
     <div class="max-w-4xl mx-auto px-4">
       <!-- Tabs -->
       <div class="flex border-b border-gray-200 mb-10 bg-white rounded-t-xl overflow-hidden shadow-sm">
-        <button class="notif-tab active flex-1 text-center" data-tab="govt" id="tabGovt">
-          🏛️ Government Notifications
+        <button class="notif-tab active flex-1 text-center flex items-center justify-center gap-2" data-tab="govt" id="tabGovt">
+          <svg class="w-5 h-5 text-[#C9A84C]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 22h20M4 22V11h16v11M2 11l10-8 10 8M10 22v-6h4v6M8 11v5M16 11v5"></path></svg>
+          Government Notifications
         </button>
-        <button class="notif-tab flex-1 text-center" data-tab="chamber" id="tabChamber">
-          📋 Chamber Notifications
+        <button class="notif-tab flex-1 text-center flex items-center justify-center gap-2" data-tab="chamber" id="tabChamber">
+          <svg class="w-5 h-5 text-[#C9A84C]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
+          Chamber Notifications
         </button>
       </div>
 
@@ -65,12 +68,12 @@
               <div class="flex items-start gap-4">
                 <div class="w-10 h-10 rounded-full bg-[#C9A84C]/10 flex items-center justify-center text-lg flex-shrink-0">${i + 1}</div>
                 <div>
-                  <h3 class="font-semibold text-[#0B1F3A]">${n.title}</h3>
+                  <h3 class="font-semibold text-[var(--secondary-color)]">${n.title}</h3>
                   <p class="text-[#6B7280] text-sm mt-1">${formatDate(n.date)}</p>
                 </div>
               </div>
-              <a href="${n.file}" class="btn-gold text-sm py-2 px-4 flex-shrink-0">
-                📄 Download
+              <a href="${n.file}" class="btn-gold text-sm py-2 px-4 flex-shrink-0 flex items-center gap-1.5">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg> Download
               </a>
             </div>`;
         });

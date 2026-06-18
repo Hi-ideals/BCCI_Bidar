@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="Highlights/BCCI%20logo.png" type="image/png">
 </head>
 <body class="bg-white">
   <div id="site-header"></div>
@@ -33,7 +34,7 @@
       <div class="flex flex-col lg:flex-row gap-12 items-center fade-in">
         <div class="lg:w-3/5">
           <span class="text-[#C9A84C] uppercase tracking-[3px] text-sm font-semibold">Who We Are</span>
-          <h2 class="font-['Playfair_Display'] text-3xl md:text-4xl font-bold text-[#0B1F3A] mt-3 mb-6 gold-underline gold-underline-left" id="aboutHeading"></h2>
+          <h2 class="font-['Playfair_Display'] text-3xl md:text-4xl font-bold text-[var(--secondary-color)] mt-3 mb-6 gold-underline gold-underline-left" id="aboutHeading"></h2>
           <p class="text-[#6B7280] leading-relaxed text-lg mb-6" id="aboutBody"></p>
           <p class="text-[#6B7280] leading-relaxed">
             Over the decades, BCCI has evolved into a comprehensive support system for the business ecosystem of Bidar. We organize workshops, trade exhibitions, business meets, and policy dialogues to equip our members with the tools and knowledge needed to thrive in a competitive environment. We actively engage with local, state, and central government bodies to ensure that the voice of Bidar's business community is heard and their concerns addressed.
@@ -52,17 +53,21 @@
   </section>
 
   <!-- Mission & Vision -->
-  <section class="py-20 bg-[#F5F7FA]">
+  <section class="py-20 bg-[var(--bg-light)]">
     <div class="max-w-7xl mx-auto px-4">
       <div class="grid md:grid-cols-2 gap-10 fade-in">
         <div class="bg-white rounded-xl p-8 shadow-lg">
-          <div class="w-14 h-14 rounded-full bg-[#C9A84C]/10 flex items-center justify-center text-2xl mb-5">🎯</div>
-          <h3 class="font-['Playfair_Display'] text-2xl font-bold text-[#0B1F3A] mb-4">Our Mission</h3>
+          <div class="w-14 h-14 rounded-full bg-[#C9A84C]/10 flex items-center justify-center mb-5">
+            <svg class="w-7 h-7 text-[#C9A84C]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+          </div>
+          <h3 class="font-['Playfair_Display'] text-2xl font-bold text-[var(--secondary-color)] mb-4">Our Mission</h3>
           <p class="text-[#6B7280] leading-relaxed">To accelerate the economic and industrial growth of Bidar by providing a platform for collaboration, knowledge sharing, and policy advocacy. We strive to create a business-friendly environment that attracts investment, fosters entrepreneurship, and generates employment opportunities for the people of Bidar.</p>
         </div>
         <div class="bg-white rounded-xl p-8 shadow-lg">
-          <div class="w-14 h-14 rounded-full bg-[#C9A84C]/10 flex items-center justify-center text-2xl mb-5">🔭</div>
-          <h3 class="font-['Playfair_Display'] text-2xl font-bold text-[#0B1F3A] mb-4">Our Vision</h3>
+          <div class="w-14 h-14 rounded-full bg-[#C9A84C]/10 flex items-center justify-center mb-5">
+            <svg class="w-7 h-7 text-[#C9A84C]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m10 14 3 3L22 7l-3-3L10 14z"></path><path d="m14 10-2-2-4 4 2 2 4-4z"></path><path d="M6 18H2v4h4v-4z"></path><path d="m8 12-4 4"></path></svg>
+          </div>
+          <h3 class="font-['Playfair_Display'] text-2xl font-bold text-[var(--secondary-color)] mb-4">Our Vision</h3>
           <p class="text-[#6B7280] leading-relaxed">To position Bidar as a dynamic hub for trade, industry, and innovation in North Karnataka. We envision a future where every entrepreneur in Bidar has access to world-class resources, mentorship, and government support to realize their business ambitions and contribute to the district's prosperity.</p>
         </div>
       </div>
@@ -70,7 +75,7 @@
   </section>
 
   <!-- President's Message -->
-  <section class="py-20 bg-[#0B1F3A]">
+  <section class="py-20 bg-[var(--secondary-color)]">
     <div class="max-w-7xl mx-auto px-4">
       <div class="text-center mb-12">
         <span class="text-[#C9A84C] uppercase tracking-[3px] text-sm font-semibold">Message</span>
@@ -95,7 +100,7 @@
   <section class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 text-center">
       <span class="text-[#C9A84C] uppercase tracking-[3px] text-sm font-semibold">Our Leadership</span>
-      <h2 class="font-['Playfair_Display'] text-3xl md:text-4xl font-bold text-[#0B1F3A] mt-3 mb-12 gold-underline">Office Bearers</h2>
+      <h2 class="font-['Playfair_Display'] text-3xl md:text-4xl font-bold text-[var(--secondary-color)] mt-3 mb-12 gold-underline">Office Bearers</h2>
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 fade-in" id="bearersGrid"></div>
     </div>
   </section>
@@ -104,7 +109,7 @@
   <section class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 text-center">
       <span class="text-[#C9A84C] uppercase tracking-[3px] text-sm font-semibold">What We Offer</span>
-      <h2 class="font-['Playfair_Display'] text-3xl md:text-4xl font-bold text-[#0B1F3A] mt-3 mb-12 gold-underline">Our Key Services</h2>
+      <h2 class="font-['Playfair_Display'] text-3xl md:text-4xl font-bold text-[var(--secondary-color)] mt-3 mb-12 gold-underline">Our Key Services</h2>
       <div class="grid md:grid-cols-3 gap-8 fade-in" id="servicesGrid"></div>
     </div>
   </section>
@@ -119,14 +124,8 @@
       document.getElementById('aboutBody').textContent = SITE.about.body;
       document.getElementById('aboutImage').src = SITE.about.image;
 
-      const statsRow = document.getElementById('statsRow');
-      SITE.about.stats.forEach(s => {
-        statsRow.innerHTML += `
-          <div class="stat-item text-center py-6 bg-white rounded-xl shadow-sm">
-            <div class="text-4xl font-bold text-[#C9A84C] font-['Playfair_Display']">${s.number}</div>
-            <div class="text-[#6B7280] mt-1 text-sm font-medium">${s.label}</div>
-          </div>`;
-      });
+      // Stats are rendered dynamically with counter animations by components.js
+
 
       document.getElementById('presidentImg').src = SITE.president.image;
       document.getElementById('presidentMessage').textContent = SITE.president.message;
@@ -138,7 +137,7 @@
         bearers.innerHTML += `
           <div class="bearer-card bg-white rounded-xl p-5 shadow-md text-center border border-gray-100">
             <img src="${b.image}" alt="${b.name}" class="w-24 h-24 rounded-full mx-auto bearer-avatar object-cover mb-3">
-            <div class="font-semibold text-[#0B1F3A] text-sm">${b.name}</div>
+            <div class="font-semibold text-[var(--secondary-color)] text-sm">${b.name}</div>
             <div class="text-[#C9A84C] text-xs mt-1">${b.role}</div>
           </div>`;
       });
@@ -146,9 +145,9 @@
       const servGrid = document.getElementById('servicesGrid');
       SITE.services.forEach(s => {
         servGrid.innerHTML += `
-          <div class="service-card bg-[#F5F7FA] rounded-xl p-8 shadow-lg text-center">
+          <div class="service-card bg-[var(--bg-light)] rounded-xl p-8 shadow-lg text-center">
             <div class="w-16 h-16 mx-auto mb-5 rounded-full bg-[#C9A84C]/10 flex items-center justify-center text-3xl">${s.icon}</div>
-            <h3 class="font-['Playfair_Display'] text-xl font-bold text-[#0B1F3A] mb-3">${s.title}</h3>
+            <h3 class="font-['Playfair_Display'] text-xl font-bold text-[var(--secondary-color)] mb-3">${s.title}</h3>
             <p class="text-[#6B7280] text-sm leading-relaxed">${s.desc}</p>
           </div>`;
       });

@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="Highlights/BCCI%20logo.png" type="image/png">
 </head>
 <body class="bg-white">
   <div id="site-header"></div>
@@ -28,46 +29,99 @@
   </section>
 
   <!-- Contact Section -->
-  <section class="py-20 bg-[#F5F7FA]">
+  <section class="py-20 bg-[var(--bg-light)]">
     <div class="max-w-7xl mx-auto px-4">
       <div class="grid lg:grid-cols-2 gap-12">
-        <!-- Contact Form -->
-        <div class="bg-white rounded-xl p-8 shadow-lg fade-in">
-          <h2 class="font-['Playfair_Display'] text-2xl font-bold text-[#0B1F3A] mb-2">Send Us a Message</h2>
-          <p class="text-[#6B7280] text-sm mb-6">Fill out the form below and we'll get back to you as soon as possible.</p>
-          <form action="https://formsubmit.co/bccibidar2025@gmail.com" method="POST" id="contactForm">
-            <!-- Formsubmit.co configurations -->
-            <input type="hidden" name="_subject" value="New submission from BCCI Bidar Website!">
-            <input type="hidden" name="_captcha" value="false">
-            <!-- To redirect back to contact page after submission instead of formsubmit default page -->
-            <input type="hidden" name="_next" value="https://bccibdr.com/contact.html">
-            
-            <div class="grid sm:grid-cols-2 gap-4 mb-4">
-              <div>
-                <label class="text-sm font-medium text-[#1A1A2E] mb-1.5 block">Full Name *</label>
-                <input type="text" name="name" required class="contact-input" placeholder="Your full name" id="contactName">
-              </div>
-              <div>
-                <label class="text-sm font-medium text-[#1A1A2E] mb-1.5 block">Email *</label>
-                <input type="email" name="email" required class="contact-input" placeholder="your@email.com" id="contactEmail">
-              </div>
+        <!-- Contact Form Container -->
+        <div class="bg-white rounded-xl shadow-lg fade-in overflow-hidden">
+          <!-- Form Tabs -->
+          <div class="flex border-b border-gray-100 bg-gray-50/50">
+            <button onclick="switchFormTab('general')" id="tab-general" class="flex-1 py-4 text-center font-bold text-sm border-b-2 border-[var(--primary-color)] text-[var(--secondary-color)] bg-white transition-all outline-none">
+              General Inquiry
+            </button>
+            <button onclick="switchFormTab('grievance')" id="tab-grievance" class="flex-1 py-4 text-center font-semibold text-sm border-b-2 border-transparent text-gray-500 hover:text-[var(--secondary-color)] hover:bg-white/50 transition-all outline-none">
+              File a Grievance
+            </button>
+          </div>
+
+          <div class="p-8">
+            <!-- General Inquiry Form -->
+            <div id="generalFormContainer">
+              <h2 class="font-['Playfair_Display'] text-2xl font-bold text-[var(--secondary-color)] mb-2">Send Us a Message</h2>
+              <p class="text-[#6B7280] text-sm mb-6">Fill out the form below and we'll get back to you as soon as possible.</p>
+              <form action="https://formsubmit.co/bccibidar2025@gmail.com" method="POST" id="contactForm">
+                <!-- Formsubmit.co configurations -->
+                <input type="hidden" name="_subject" value="New submission from BCCI Bidar Website!">
+                <input type="hidden" name="_captcha" value="false">
+                <!-- To redirect back to contact page after submission instead of formsubmit default page -->
+                <input type="hidden" name="_next" value="https://bccibdr.com/contact.html">
+                
+                <div class="grid sm:grid-cols-2 gap-4 mb-4">
+                  <div>
+                    <label class="text-sm font-medium text-[#1A1A2E] mb-1.5 block">Full Name *</label>
+                    <input type="text" name="name" required class="contact-input" placeholder="Your full name" id="contactName">
+                  </div>
+                  <div>
+                    <label class="text-sm font-medium text-[#1A1A2E] mb-1.5 block">Email *</label>
+                    <input type="email" name="email" required class="contact-input" placeholder="your@email.com" id="contactEmail">
+                  </div>
+                </div>
+                <div class="grid sm:grid-cols-2 gap-4 mb-4">
+                  <div>
+                    <label class="text-sm font-medium text-[#1A1A2E] mb-1.5 block">Phone</label>
+                    <input type="tel" name="phone" class="contact-input" placeholder="+91 XXXXX XXXXX" id="contactPhone">
+                  </div>
+                  <div>
+                    <label class="text-sm font-medium text-[#1A1A2E] mb-1.5 block">Subject *</label>
+                    <input type="text" name="subject" required class="contact-input" placeholder="How can we help?" id="contactSubject">
+                  </div>
+                </div>
+                <div class="mb-6">
+                  <label class="text-sm font-medium text-[#1A1A2E] mb-1.5 block">Message *</label>
+                  <textarea name="message" required rows="5" class="contact-input resize-none" placeholder="Write your message here..." id="contactMessage"></textarea>
+                </div>
+                <button type="submit" class="btn-gold w-full text-center py-3 text-lg">Send Message →</button>
+              </form>
             </div>
-            <div class="grid sm:grid-cols-2 gap-4 mb-4">
-              <div>
-                <label class="text-sm font-medium text-[#1A1A2E] mb-1.5 block">Phone</label>
-                <input type="tel" name="phone" class="contact-input" placeholder="+91 XXXXX XXXXX" id="contactPhone">
-              </div>
-              <div>
-                <label class="text-sm font-medium text-[#1A1A2E] mb-1.5 block">Subject *</label>
-                <input type="text" name="subject" required class="contact-input" placeholder="How can we help?" id="contactSubject">
-              </div>
+
+            <!-- Grievance Form -->
+            <div id="grievanceFormContainer" class="hidden">
+              <h2 class="font-['Playfair_Display'] text-2xl font-bold text-[var(--secondary-color)] mb-2">Submit a Grievance</h2>
+              <p class="text-[#6B7280] text-sm mb-6">If you have any grievances or complaints, please fill out the required details below. You can also upload supporting files/images.</p>
+              <form action="https://formsubmit.co/bccibidar2025@gmail.com" method="POST" enctype="multipart/form-data" id="grievanceForm">
+                <!-- Formsubmit.co configurations -->
+                <input type="hidden" name="_subject" value="New Grievance Filed - BCCI Bidar Website!">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="https://bccibdr.com/contact.html">
+                
+                <div class="grid sm:grid-cols-2 gap-4 mb-4">
+                  <div>
+                    <label class="text-sm font-medium text-[#1A1A2E] mb-1.5 block">Full Name *</label>
+                    <input type="text" name="name" required class="contact-input" placeholder="Your full name" id="grievanceName">
+                  </div>
+                  <div>
+                    <label class="text-sm font-medium text-[#1A1A2E] mb-1.5 block">Email *</label>
+                    <input type="email" name="email" required class="contact-input" placeholder="your@email.com" id="grievanceEmail">
+                  </div>
+                </div>
+                <div class="grid sm:grid-cols-2 gap-4 mb-4">
+                  <div>
+                    <label class="text-sm font-medium text-[#1A1A2E] mb-1.5 block">Contact Number *</label>
+                    <input type="tel" name="phone" required class="contact-input" placeholder="+91 XXXXX XXXXX" id="grievancePhone">
+                  </div>
+                  <div>
+                    <label class="text-sm font-medium text-[#1A1A2E] mb-1.5 block">Upload Images / Files (Optional)</label>
+                    <input type="file" name="attachment" accept="image/*,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" class="w-full text-sm text-[#6B7280] file:mr-4 file:py-2.5 file:px-4 file:rounded-lg file:border file:border-dashed file:border-[var(--primary-color)]/40 file:text-sm file:font-semibold file:bg-[var(--primary-color)]/5 file:text-[var(--secondary-color)] hover:file:bg-[var(--primary-color)]/10 cursor-pointer focus:outline-none" id="grievanceAttachment">
+                  </div>
+                </div>
+                <div class="mb-6">
+                  <label class="text-sm font-medium text-[#1A1A2E] mb-1.5 block">Description of Grievance *</label>
+                  <textarea name="description" required rows="5" class="contact-input resize-none" placeholder="Explain your grievance in detail here..." id="grievanceDescription"></textarea>
+                </div>
+                <button type="submit" class="btn-gold w-full text-center py-3 text-lg">Submit Grievance →</button>
+              </form>
             </div>
-            <div class="mb-6">
-              <label class="text-sm font-medium text-[#1A1A2E] mb-1.5 block">Message *</label>
-              <textarea name="message" required rows="5" class="contact-input resize-none" placeholder="Write your message here..." id="contactMessage"></textarea>
-            </div>
-            <button type="submit" class="btn-gold w-full text-center py-3 text-lg">Send Message →</button>
-          </form>
+          </div>
         </div>
 
         <!-- Contact Info & Map -->
@@ -75,33 +129,42 @@
           <!-- Info Cards -->
           <div class="grid sm:grid-cols-2 gap-4">
             <div class="bg-white rounded-xl p-6 shadow-md">
-              <div class="w-12 h-12 rounded-full bg-[#C9A84C]/10 flex items-center justify-center text-xl mb-3">📍</div>
-              <h3 class="font-semibold text-[#0B1F3A] mb-1">Visit Us</h3>
+              <div class="w-12 h-12 rounded-full bg-[#C9A84C]/10 flex items-center justify-center mb-3">
+                <svg class="w-6 h-6 text-[#C9A84C]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              </div>
+              <h3 class="font-semibold text-[var(--secondary-color)] mb-1">Visit Us</h3>
               <p class="text-[#6B7280] text-sm" id="contactAddress"></p>
             </div>
             <div class="bg-white rounded-xl p-6 shadow-md">
-              <div class="w-12 h-12 rounded-full bg-[#C9A84C]/10 flex items-center justify-center text-xl mb-3">📞</div>
-              <h3 class="font-semibold text-[#0B1F3A] mb-1">Call Us</h3>
+              <div class="w-12 h-12 rounded-full bg-[#C9A84C]/10 flex items-center justify-center mb-3">
+                <svg class="w-6 h-6 text-[#C9A84C]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              </div>
+              <h3 class="font-semibold text-[var(--secondary-color)] mb-1">Call Us</h3>
               <p class="text-[#6B7280] text-sm" id="contactPhones"></p>
             </div>
             <div class="bg-white rounded-xl p-6 shadow-md">
-              <div class="w-12 h-12 rounded-full bg-[#C9A84C]/10 flex items-center justify-center text-xl mb-3">✉️</div>
-              <h3 class="font-semibold text-[#0B1F3A] mb-1">Email Us</h3>
+              <div class="w-12 h-12 rounded-full bg-[#C9A84C]/10 flex items-center justify-center mb-3">
+                <svg class="w-6 h-6 text-[#C9A84C]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              </div>
+              <h3 class="font-semibold text-[var(--secondary-color)] mb-1">Email Us</h3>
               <p class="text-[#6B7280] text-sm" id="contactEmailInfo"></p>
             </div>
             <div class="bg-white rounded-xl p-6 shadow-md">
-              <div class="w-12 h-12 rounded-full bg-[#C9A84C]/10 flex items-center justify-center text-xl mb-3">🕐</div>
-              <h3 class="font-semibold text-[#0B1F3A] mb-1">Office Hours</h3>
+              <div class="w-12 h-12 rounded-full bg-[#C9A84C]/10 flex items-center justify-center mb-3">
+                <svg class="w-6 h-6 text-[#C9A84C]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              </div>
+              <h3 class="font-semibold text-[var(--secondary-color)] mb-1">Office Hours</h3>
               <p class="text-[#6B7280] text-sm">Mon – Sat: 10 AM – 6 PM<br>Sunday: Closed</p>
             </div>
           </div>
 
           <!-- Map -->
           <div class="rounded-xl overflow-hidden shadow-lg">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d498.7335387383919!2d77.51491831353232!3d17.914769860059778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcec7466bbfd205%3A0x1ec8feb0945572a5!2sBidar%20Chess%20Association!5e0!3m2!1sen!2sin!4v1781680140186!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d1535.594311705834!2d77.51381733679762!3d17.914607866053874!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTfCsDU0JzUyLjkiTiA3N8KwMzAnNTUuNCJF!5e0!3m2!1sen!2sin!4v1781776699669!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
               title="BCCI Bidar Location">
             </iframe>
           </div>
+          
         </div>
       </div>
     </div>
@@ -112,6 +175,28 @@
   <script src="content.js"></script>
   <script src="components.js"></script>
   <script>
+    function switchFormTab(tabId) {
+      const generalContainer = document.getElementById('generalFormContainer');
+      const grievanceContainer = document.getElementById('grievanceFormContainer');
+      const tabGeneral = document.getElementById('tab-general');
+      const tabGrievance = document.getElementById('tab-grievance');
+
+      if (tabId === 'general') {
+        generalContainer.classList.remove('hidden');
+        grievanceContainer.classList.add('hidden');
+        
+        tabGeneral.className = "flex-1 py-4 text-center font-bold text-sm border-b-2 border-[var(--primary-color)] text-[var(--secondary-color)] bg-white transition-all outline-none";
+        tabGrievance.className = "flex-1 py-4 text-center font-semibold text-sm border-b-2 border-transparent text-gray-500 hover:text-[var(--secondary-color)] hover:bg-white/50 transition-all outline-none";
+      } else {
+        generalContainer.classList.add('hidden');
+        grievanceContainer.classList.remove('hidden');
+
+        tabGeneral.className = "flex-1 py-4 text-center font-semibold text-sm border-b-2 border-transparent text-gray-500 hover:text-[var(--secondary-color)] hover:bg-white/50 transition-all outline-none";
+        tabGrievance.className = "flex-1 py-4 text-center font-bold text-sm border-b-2 border-[var(--primary-color)] text-[var(--secondary-color)] bg-white transition-all outline-none";
+      }
+    }
+    window.switchFormTab = switchFormTab;
+
     document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('contactAddress').textContent = SITE.org.address;
       document.getElementById('contactPhones').innerHTML = `<a href="tel:${SITE.org.phone.replace(/[^0-9+]/g, '')}" class="hover:text-[#C9A84C] transition-colors">${SITE.org.phone}</a><br><a href="tel:${SITE.org.phone2.replace(/[^0-9+]/g, '')}" class="hover:text-[#C9A84C] transition-colors">${SITE.org.phone2}</a>`;

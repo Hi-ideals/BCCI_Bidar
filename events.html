@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="Highlights/BCCI%20logo.png" type="image/png">
 </head>
 <body class="bg-white">
   <div id="site-header"></div>
@@ -28,7 +29,7 @@
   </section>
 
   <!-- Events Listing -->
-  <section class="py-20 bg-[#F5F7FA]">
+  <section class="py-20 bg-[var(--bg-light)]">
     <div class="max-w-7xl mx-auto px-4">
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 fade-in" id="eventsGrid"></div>
     </div>
@@ -52,7 +53,7 @@
               </div>
             </div>
             <div class="p-6">
-              <h3 class="font-['Playfair_Display'] font-bold text-[#0B1F3A] text-lg mb-3 line-clamp-2">${e.title}</h3>
+              <h3 class="font-['Playfair_Display'] font-bold text-[var(--secondary-color)] text-lg mb-3 line-clamp-2">${e.title}</h3>
               <div class="flex items-center gap-4 text-sm text-[#6B7280] mb-3">
                 <span class="flex items-center gap-1">
                   <svg class="w-4 h-4 text-[#C9A84C]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/></svg>
