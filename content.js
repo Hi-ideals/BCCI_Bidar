@@ -234,7 +234,8 @@ const SITE = {
 
   notifications: {
     govt: [
-      { title: "Press Note – Bengaluru–Hyderabad Railway Extension to Bidar", date: "2026-02-09", file: "Docs/Press-Note-Somanna-09-02-2026.pdf" }
+      { title: "Press Note – Bengaluru–Hyderabad Railway Extension to Bidar", date: "2026-02-09", file: "Docs/Press-Note-Somanna-09-02-2026.pdf" },
+      { title: "Managing Committee Members List", date: "2026-02-09", file: "Docs/managing-committee.pdf" }
     ],
     chamber: [
       { title: "Twenty Ninth (29) Annual Report", date: "2025-10-15", file: "Docs/TWENTY-NINETH-29-ANNUAL-REPORT.pdf" },
