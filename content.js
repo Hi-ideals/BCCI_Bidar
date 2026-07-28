@@ -234,10 +234,10 @@ const SITE = {
 
   notifications: {
     govt: [
-      { title: "Press Note – Bengaluru–Hyderabad Railway Extension to Bidar", date: "2026-02-09", file: "Docs/Press-Note-Somanna-09-02-2026.pdf" },
-      { title: "Managing Committee Members List", date: "2026-06-27", file: "Docs/managing-committee.pdf" }
+      { title: "Press Note – Bengaluru–Hyderabad Railway Extension to Bidar", date: "2026-02-09", file: "Docs/Press-Note-Somanna-09-02-2026.pdf" }
     ],
     chamber: [
+      { title: "Managing Committee Members List", date: "2026-06-27", file: "Docs/managing-committee.pdf" },
       { title: "Twenty Ninth (29) Annual Report", date: "2025-10-15", file: "Docs/TWENTY-NINETH-29-ANNUAL-REPORT.pdf" },
       { title: "Annual Report for the Year 2024-2025", date: "2025-10-10", file: "Docs/ANNUAL-REPORT-FOR-THE-YEAR-2024-2025.pdf" },
       { title: "Appeal to Entrepreneurs and Businessmen of Bidar", date: "2025-10-05", file: "Docs/Chambe-Website-08-10-2025.pdf" }
