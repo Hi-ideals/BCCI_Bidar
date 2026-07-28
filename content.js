@@ -40,7 +40,7 @@ const SITE = {
   ],
 
   ticker: [
-    { text: "BCCI-Managing Committee Members List", link: "Docs/managing-committee.pdf" }
+    { text: "The Thirtieth (30th) Annual General Body Meeting of Members of BCCI Biadr", link: "Docs/managing-committee.pdf" }
   ],
 
   hero: [
