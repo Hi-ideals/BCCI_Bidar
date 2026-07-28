@@ -40,10 +40,7 @@ const SITE = {
   ],
 
   ticker: [
-    { text: "A request to extend the Bengaluru–Hyderabad High-Speed Railway Corridor up to Bidar.", link: "Docs/Press-Note-Somanna-09-02-2026.pdf" },
-    { text: "TWENTY NINETH (29) ANNUAL REPORT now available for download.", link: "Docs/TWENTY-NINETH-29-ANNUAL-REPORT.pdf" },
-    { text: "ANNUAL REPORT FOR THE YEAR 2024-2025 published.", link: "Docs/ANNUAL-REPORT-FOR-THE-YEAR-2024-2025.pdf" },
-    { text: "An appeal to entrepreneurs and businessmen of Bidar.", link: "Docs/Chambe-Website-08-10-2025.pdf" }
+    { text: "BCCI-Managing Committee Members List", link: "Docs/managing-committee.pdf" }
   ],
 
   hero: [
