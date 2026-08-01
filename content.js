@@ -235,7 +235,6 @@ const SITE = {
     ],
     chamber: [
       { title: "The Thirtieth (30th) Annual General Body Meeting of Members of BCCI Biadr", date: "2026-06-27", file: "Docs/Thirtieth (30th) Annual General Body Meeting.pdf"},
-      { title: "The Thirtieth (30th) Annual General Body Meeting of Members of BCCI Biadr", date: "2026-06-27", file: "Docs/managing-committee.pdf" },
       { title: "Twenty Ninth (29) Annual Report", date: "2025-10-15", file: "Docs/TWENTY-NINETH-29-ANNUAL-REPORT.pdf" },
       { title: "Annual Report for the Year 2024-2025", date: "2025-10-10", file: "Docs/ANNUAL-REPORT-FOR-THE-YEAR-2024-2025.pdf" },
       { title: "Appeal to Entrepreneurs and Businessmen of Bidar", date: "2025-10-05", file: "Docs/Chambe-Website-08-10-2025.pdf" }
