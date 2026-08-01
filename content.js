@@ -40,7 +40,7 @@ const SITE = {
   ],
 
   ticker: [
-    { text: "The Thirtieth (30th) Annual General Body Meeting of Members of BCCI Biadr", link: "Docs/managing-committee.pdf" }
+    { text: "The Thirtieth (30th) Annual General Body Meeting of Members of BCCI Biadr", link: "Docs/Thirtieth (30th) Annual General Body Meeting.pdf" }
   ],
 
   hero: [
